@@ -3,7 +3,7 @@ import org.junit.Test;
 
 public class PrimeTest {
 
-    private final PrimeNumber prime = new PrimeNumber();
+    private final PrimeNumber prime = new PrimeNumber(new Printer());
 
     @Test
     public void returnsTrueIfNumberIsPrime() {
