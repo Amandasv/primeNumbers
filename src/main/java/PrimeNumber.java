@@ -15,10 +15,31 @@ public class PrimeNumber {
     }
 
     public void generate(int number) {
-        for (int position = 2; position < number ; position++) {
-            if(isPrime(position)){
-                System.out.println(position);
+        int primeNumber = 2;
+        int result = 0;
+        for (int position = number; position >= 2 ; position--) {
+
+            if(isPrime(primeNumber)) {
+                while (number%primeNumber == 0) {
+                    result = number/primeNumber;
+                    printer.print(Integer.toString(primeNumber) + "\n") ;
+                    number = result;
+
+                    if (number%primeNumber != 0) {
+                        primeNumber++;
+                        break;
+                    }
+                }
+            } else {
+                primeNumber++;
             }
+
+            if (number == primeNumber) {
+                printer.print(Integer.toString(primeNumber) + "\n") ;
+                break;
+            }
+
+
         }
     }
 

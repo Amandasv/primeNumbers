@@ -18,4 +18,5 @@ public class PrimeTest {
 
         Assert.assertEquals(classification, false);
     }
+
 }
