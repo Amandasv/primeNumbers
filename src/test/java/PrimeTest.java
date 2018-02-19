@@ -19,4 +19,11 @@ public class PrimeTest {
         Assert.assertEquals(classification, false);
     }
 
+    @Test
+    public void returnsResultForNumberWithDivider() {
+        int result = prime.divideByPrime(30, 2);
+
+        Assert.assertEquals(result, 15);
+    }
+
 }

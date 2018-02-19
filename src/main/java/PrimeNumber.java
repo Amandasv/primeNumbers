@@ -10,20 +10,20 @@ public class PrimeNumber {
         Printer printer = new Printer();
 
         PrimeNumber primeNumber = new PrimeNumber(printer);
-        primeNumber.generate(30);
+        primeNumber.generate(72);
 
     }
 
     public void generate(int number) {
         int primeNumber = 2;
-        int result = 0;
+
         for (int position = number; position >= 2 ; position--) {
 
             if(isPrime(primeNumber)) {
                 while (number%primeNumber == 0) {
-                    result = number/primeNumber;
+
                     printer.print(Integer.toString(primeNumber) + "\n") ;
-                    number = result;
+                    number = divideByPrime(number, primeNumber);
 
                     if (number%primeNumber != 0) {
                         primeNumber++;
@@ -38,9 +38,13 @@ public class PrimeNumber {
                 printer.print(Integer.toString(primeNumber) + "\n") ;
                 break;
             }
-
-
         }
+    }
+
+    public int divideByPrime(int dividend, int primeNumber) {
+        int result = dividend/primeNumber;
+        return result;
+
     }
 
     public boolean isPrime(int number) {
