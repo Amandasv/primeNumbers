@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.mockito.Mockito.mock;
+
 public class PrimeTest {
 
     private final PrimeNumber prime = new PrimeNumber(new Printer());
@@ -25,5 +27,12 @@ public class PrimeTest {
 
         Assert.assertEquals(result, 15);
     }
+
+//    @Test
+//    public void verifyIfPrinterIsCalled() {
+//        Printer printer = mock(Printer.class);
+//    }
+
+
 
 }
