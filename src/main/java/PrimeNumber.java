@@ -10,7 +10,7 @@ public class PrimeNumber {
         Printer printer = new Printer();
 
         PrimeNumber primeNumber = new PrimeNumber(printer);
-        primeNumber.generate(72);
+        primeNumber.generate(30);
 
     }
 

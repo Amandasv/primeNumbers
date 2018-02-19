@@ -1,11 +1,25 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class PrimeTest {
 
-    private final PrimeNumber prime = new PrimeNumber(new Printer());
+//    private final PrimeNumber prime = new PrimeNumber(new Printer());
+
+    @Mock
+    private Printer printer;
+    private PrimeNumber prime;
+
+    @Before
+    public void prepareDependencies() {
+        MockitoAnnotations.initMocks(this);
+        prime = new PrimeNumber(printer);
+    }
 
     @Test
     public void returnsTrueIfNumberIsPrime() {
@@ -29,9 +43,11 @@ public class PrimeTest {
     }
 
 //    @Test
-//    public void verifyIfPrinterIsCalled() {
-//        Printer printer = mock(Printer.class);
+//    public void verifyIfMethodIsCalled() {
+//        prime.generate(30);
+//        verify(prime).divideByPrime(30, 2);
 //    }
+
 
 
 
